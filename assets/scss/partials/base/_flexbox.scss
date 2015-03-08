@@ -1,0 +1,74 @@
+// # Flexbox
+// Flexbox support is full on Chrome, Firefox and Safari (with prefix) and nearly full for IE 10.
+
+
+@mixin flex {
+  display: -webkit-flex; // Safari
+  display: -ms-flexbox; // IE 10
+  display: flex;
+}
+
+.flex {
+  @include flex;
+}
+
+@mixin flex-1 {
+  -webkit-flex: 1; // Safari
+  -ms-flex: 1; // IE 10
+  flex: 1;
+}
+
+.flex-1 {
+  @include flex-1;
+}
+
+@mixin flex--column {
+  -webkit-flex-direction: column; // Safari
+  -ms-flex-direction: column; // IE 10
+  flex-direction: column;
+}
+
+.flex--column {
+  @include flex--column;
+}
+
+@mixin align-items--center {
+  -webkit-align-items: center; // Safari
+  -ms-flex-align: center; // IE 10
+  align-items: center;
+}
+
+.align-items--center {
+  @include align-items--center;
+}
+
+@mixin flex-wrap--wrap {
+  -webkit-flex-wrap: wrap; // Safari
+  -ms-flex-wrap: wrap; // IE 10
+  flex-wrap: wrap;
+}
+
+.flex-wrap--wrap {
+  @include flex-wrap--wrap;
+}
+
+@mixin align-items--flex-end {
+  -webkit-align-items: flex-end; // Safari
+  -ms-flex-align: end; // IE 10
+  align-items: flex-end;
+}
+
+.align-items--flex-end {
+  @include align-items--flex-end;
+}
+
+@mixin align-items--flex-start {
+  -webkit-align-items: flex-start; // Safari
+  -ms-flex-align: start; // IE 10
+  align-items: flex-start;
+}
+
+.align-items--flex-start {
+  @include align-items--flex-start;
+}
+

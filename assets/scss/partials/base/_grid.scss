@@ -1,0 +1,144 @@
+// # Grids
+// Fluid and nestable grid system, e.g.:
+
+// ## Examples
+
+// ### Grid Gutter
+// If you want a gutter between grid items.
+
+//[hc]
+//     <div class="grid">
+//       <div class="grid__cell width-3-5">
+//         <div class="doc-placeholder">3/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//     </div>
+//[/hc]
+
+//[hc]
+//     <div class="grid grid--gutter--narrow">
+//       <div class="grid__cell width-3-5">
+//         <div class="doc-placeholder">3/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//     </div>
+//[/hc]
+
+//[hc]
+//     <div class="grid grid--gutter--wide">
+//       <div class="grid__cell width-3-5">
+//         <div class="doc-placeholder">3/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//     </div>
+//[/hc]
+
+// ### Grid Flush
+
+//[hc]
+//     <div class="grid grid--flush">
+//       <div class="grid__cell width-3-5">
+//         <div class="doc-placeholder">3/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//     </div>
+//[/hc]
+
+// ### Different Widths
+
+//[hc]
+//     <div class="grid">
+//       <div class="grid__cell width-3-5">
+//         <div class="doc-placeholder">3/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//       <div class="grid__cell width-1-5">
+//         <div class="doc-placeholder">1/5</div>
+//       </div>
+//     </div>
+//[/hc]
+
+
+%grid,
+.grid {
+  @include flex;
+  @include flex-wrap--wrap;
+  margin-left: -(spacer(2));
+
+  &__cell {
+    @include flex-1;
+    padding-left: spacer(2);
+  }
+
+  &--gutter--narrow {
+    margin-left: -(spacer(1));
+
+    > .grid__cell {
+      padding-left: spacer(1);
+    }
+  }
+
+  &--gutter--wide {
+    margin-left: -(spacer(4));
+
+    > .grid__cell {
+      padding-left: spacer(4);
+    }
+  }
+
+  &--flush {
+    margin-left: 0;
+
+    > .grid__cell {
+      padding-left: 0;
+    }
+  }
+
+  // ## Grid Alignment
+  // Moves grid cells to align center or anchored at the bottom of the grid.
+
+  &--center {
+    @include align-items--center;
+  }
+
+  &--bottom {
+    @include align-items--flex-end;
+  }
+
+  // ## Grid Widths
+
+  // If a width is specificed on a cell__grid then have to disable the
+  // default `flex` value otherwise it won't obey the width.
+
+  // [c]
+  //     <div class="grid__cell width-1-3">grid cell</div>
+  // [/c]
+
+  &__cell[class*="width-"] {
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+  }
+}
