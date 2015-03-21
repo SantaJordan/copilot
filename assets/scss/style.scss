@@ -1,12 +1,15 @@
+@import "partials/base/vars";
 @import "partials/base/reset";
+@import "partials/base/mixin";
 @import "partials/base/flexbox";
 @import "partials/base/layout";
 @import "partials/base/grid";
+@import "partials/base/headings";
 
 @import "partials/base/main";
 
-@import "partials/objects/hero";
-@import "partials/objects/highlight";
+@import "partials/objects/buttons";
+@import "partials/objects/sections";
 @import "partials/objects/nav";
 
 @import "partials/trumps/layout";

@@ -1,7 +1,31 @@
-.fence {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+.section {
+  @include display(flex);
+  min-height: 800px;
+
+  &__item {
+    @include display(flex);
+
+    &:first-child {
+      width: 45%;
+    }
+    &:last-child {
+      width: 55%;
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
+
+.center--vertically {
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  top: -10%;
+}
+
+.content--narrow {
+  width: 50%;
+}
+
+.milli {
+  font-size: 14px;
 }

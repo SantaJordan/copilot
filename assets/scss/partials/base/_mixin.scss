@@ -1,0 +1,10 @@
+$spacer-unit: 10px;
+
+@function spacer($value) {
+  @if ($value * 2) % 1 != 0 {
+    @warn 'Spacer value must be a multiple of 0.5';
+    @return 'Spacer value must be a multiple of 0.5';
+  } @else {
+    @return $spacer-unit * $value;
+  }
+}

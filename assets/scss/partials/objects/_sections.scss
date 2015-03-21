@@ -1,0 +1,88 @@
+.logo {
+  font-size: 50px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.hero-1 {
+  background: url(../i/hero-1.1.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.hero-2 {
+  background: $color--section-2;
+
+  .fa {
+    margin: auto;
+    color: #fff;
+    font-size: 200px;
+  }
+}
+
+.hero-3 {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $color--section-3;
+    opacity: .2;
+  }
+}
+
+
+
+#section-1 {
+  h3, .logo {
+    color: $color--section-1;
+  }
+
+  .button {
+    background: $color--section-1;
+
+    &:hover {
+      background: darken($color--section-1, 10%);
+    }
+  }
+}
+
+#section-2 {
+  h3, .logo {
+    color: $color--section-2;
+  }
+}
+
+#section-3 {
+  h3, .logo {
+    color: $color--section-3;
+  }
+}
+
+.stacked {
+  @include display(flex);
+  @include flex-direction(column);
+
+  &__item {
+    @include flex(1);
+  }
+}
+
+
+#sarah {
+  background: url(../i/sarah.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#olivia {
+  background: url(../i/olivia.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#chanti {
+  background: url(../i/chanti.jpg) center center no-repeat;
+  background-size: cover;
+}
