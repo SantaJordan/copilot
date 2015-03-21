@@ -71,6 +71,13 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .stacked {
+    @include flex-direction(row);
+  }
+}
+
+
 
 #sarah {
   background: url(../i/sarah.jpg) center center no-repeat;
@@ -86,3 +93,4 @@
   background: url(../i/chanti.jpg) center center no-repeat;
   background-size: cover;
 }
+

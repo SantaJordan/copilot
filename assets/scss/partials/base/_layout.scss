@@ -1,9 +1,9 @@
 .section {
   @include display(flex);
-  min-height: 800px;
 
   &__item {
     @include display(flex);
+    min-height: 800px;
 
     &:first-child {
       width: 45%;
@@ -11,6 +11,21 @@
     &:last-child {
       width: 55%;
       border-bottom: 1px solid #eee;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .section {
+    @include flex-direction(column);
+
+    &__item {
+      min-height: 300px;
+    }
+
+    &__item:first-child,
+    &__item:last-child {
+      width: auto;
     }
   }
 }
@@ -25,6 +40,13 @@
 .content--narrow {
   width: 50%;
 }
+
+@media (max-width: 1000px) {
+  .content--narrow {
+    width: auto;
+  }
+}
+
 
 .milli {
   font-size: 14px;

@@ -283,13 +283,13 @@ input[type="submit"] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 800px;
 }
-/* line 5, ../scss/partials/base/_layout.scss */
+/* line 4, ../scss/partials/base/_layout.scss */
 .section__item {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  min-height: 800px;
 }
 /* line 8, ../scss/partials/base/_layout.scss */
 .section__item:first-child {
@@ -301,7 +301,23 @@ input[type="submit"] {
   border-bottom: 1px solid #eee;
 }
 
-/* line 18, ../scss/partials/base/_layout.scss */
+@media (max-width: 1000px) {
+  /* line 19, ../scss/partials/base/_layout.scss */
+  .section {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  /* line 22, ../scss/partials/base/_layout.scss */
+  .section__item {
+    min-height: 300px;
+  }
+  /* line 26, ../scss/partials/base/_layout.scss */
+  .section__item:first-child, .section__item:last-child {
+    width: auto;
+  }
+}
+/* line 33, ../scss/partials/base/_layout.scss */
 .center--vertically {
   margin-top: auto;
   margin-bottom: auto;
@@ -309,12 +325,18 @@ input[type="submit"] {
   top: -10%;
 }
 
-/* line 25, ../scss/partials/base/_layout.scss */
+/* line 40, ../scss/partials/base/_layout.scss */
 .content--narrow {
   width: 50%;
 }
 
-/* line 29, ../scss/partials/base/_layout.scss */
+@media (max-width: 1000px) {
+  /* line 45, ../scss/partials/base/_layout.scss */
+  .content--narrow {
+    width: auto;
+  }
+}
+/* line 51, ../scss/partials/base/_layout.scss */
 .milli {
   font-size: 14px;
 }
@@ -496,19 +518,27 @@ body {
   flex: 1;
 }
 
-/* line 75, ../scss/partials/objects/_sections.scss */
+@media (max-width: 1000px) {
+  /* line 75, ../scss/partials/objects/_sections.scss */
+  .stacked {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+/* line 82, ../scss/partials/objects/_sections.scss */
 #sarah {
   background: url(../i/sarah.jpg) center center no-repeat;
   background-size: cover;
 }
 
-/* line 80, ../scss/partials/objects/_sections.scss */
+/* line 87, ../scss/partials/objects/_sections.scss */
 #olivia {
   background: url(../i/olivia.jpg) center center no-repeat;
   background-size: cover;
 }
 
-/* line 85, ../scss/partials/objects/_sections.scss */
+/* line 92, ../scss/partials/objects/_sections.scss */
 #chanti {
   background: url(../i/chanti.jpg) center center no-repeat;
   background-size: cover;
