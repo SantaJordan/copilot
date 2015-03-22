@@ -19,6 +19,13 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .hero-2 .fa {
+    font-size: 100px;
+  }
+}
+
+
 .hero-3 {
   position: relative;
 
@@ -59,6 +66,12 @@
 #section-3 {
   h3, .logo {
     color: $color--section-3;
+  }
+}
+
+#section-4 {
+  h3, .logo {
+    color: $color--section-4;
   }
 }
 

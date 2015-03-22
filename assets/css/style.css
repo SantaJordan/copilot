@@ -310,7 +310,7 @@ input[type="submit"] {
   }
   /* line 22, ../scss/partials/base/_layout.scss */
   .section__item {
-    min-height: 300px;
+    min-height: 200px;
   }
   /* line 26, ../scss/partials/base/_layout.scss */
   .section__item:first-child, .section__item:last-child {
@@ -408,7 +408,13 @@ h2 {
   margin: 0 0 10px;
 }
 
-/* line 7, ../scss/partials/base/_headings.scss */
+@media (max-width: 1000px) {
+  /* line 8, ../scss/partials/base/_headings.scss */
+  h2 {
+    font-size: 26px;
+  }
+}
+/* line 14, ../scss/partials/base/_headings.scss */
 h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -463,11 +469,17 @@ body {
   font-size: 200px;
 }
 
-/* line 22, ../scss/partials/objects/_sections.scss */
+@media (max-width: 1000px) {
+  /* line 23, ../scss/partials/objects/_sections.scss */
+  .hero-2 .fa {
+    font-size: 100px;
+  }
+}
+/* line 29, ../scss/partials/objects/_sections.scss */
 .hero-3 {
   position: relative;
 }
-/* line 25, ../scss/partials/objects/_sections.scss */
+/* line 32, ../scss/partials/objects/_sections.scss */
 .hero-3:after {
   content: "";
   position: absolute;
@@ -479,30 +491,35 @@ body {
   opacity: .2;
 }
 
-/* line 40, ../scss/partials/objects/_sections.scss */
+/* line 47, ../scss/partials/objects/_sections.scss */
 #section-1 h3, #section-1 .logo {
   color: #df4b50;
 }
-/* line 44, ../scss/partials/objects/_sections.scss */
+/* line 51, ../scss/partials/objects/_sections.scss */
 #section-1 .button {
   background: #df4b50;
 }
-/* line 47, ../scss/partials/objects/_sections.scss */
+/* line 54, ../scss/partials/objects/_sections.scss */
 #section-1 .button:hover {
   background: #d2252b;
 }
 
-/* line 54, ../scss/partials/objects/_sections.scss */
+/* line 61, ../scss/partials/objects/_sections.scss */
 #section-2 h3, #section-2 .logo {
   color: #238fb2;
 }
 
-/* line 60, ../scss/partials/objects/_sections.scss */
+/* line 67, ../scss/partials/objects/_sections.scss */
 #section-3 h3, #section-3 .logo {
   color: #80cabf;
 }
 
-/* line 65, ../scss/partials/objects/_sections.scss */
+/* line 73, ../scss/partials/objects/_sections.scss */
+#section-4 h3, #section-4 .logo {
+  color: #f36b21;
+}
+
+/* line 78, ../scss/partials/objects/_sections.scss */
 .stacked {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -511,7 +528,7 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-/* line 69, ../scss/partials/objects/_sections.scss */
+/* line 82, ../scss/partials/objects/_sections.scss */
 .stacked__item {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -519,26 +536,26 @@ body {
 }
 
 @media (max-width: 1000px) {
-  /* line 75, ../scss/partials/objects/_sections.scss */
+  /* line 88, ../scss/partials/objects/_sections.scss */
   .stacked {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
   }
 }
-/* line 82, ../scss/partials/objects/_sections.scss */
+/* line 95, ../scss/partials/objects/_sections.scss */
 #sarah {
   background: url(../i/sarah.jpg) center center no-repeat;
   background-size: cover;
 }
 
-/* line 87, ../scss/partials/objects/_sections.scss */
+/* line 100, ../scss/partials/objects/_sections.scss */
 #olivia {
   background: url(../i/olivia.jpg) center center no-repeat;
   background-size: cover;
 }
 
-/* line 92, ../scss/partials/objects/_sections.scss */
+/* line 105, ../scss/partials/objects/_sections.scss */
 #chanti {
   background: url(../i/chanti.jpg) center center no-repeat;
   background-size: cover;

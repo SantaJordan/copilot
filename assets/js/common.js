@@ -6,6 +6,18 @@ $(document).ready(function(){
     $("#section-1").height(windowHeight);
   }
 
-  adjustHero();
+  var windowWidth = $(window).width();
+
+  if ( windowWidth >= 1000 ) {
+    adjustHero();
+  }
+
+  $(window).resize(function() {
+    var windowWidth = $(window).width();
+    if ( windowWidth < 1000 ) {
+      $("#section-1").height("auto");
+    }
+  });
+
 
 });
