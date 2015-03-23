@@ -3,7 +3,13 @@ $(document).ready(function(){
 
   function adjustHero() {
     var windowHeight = window.innerHeight;
-    $("#section-1").height(windowHeight);
+
+    if (windowHeight >= 800) {
+      $("#section-1").height(windowHeight);
+    } else {
+      $("#section-1").height(800);
+    }
+
   }
 
   var windowWidth = $(window).width();

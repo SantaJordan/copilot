@@ -1,49 +1,26 @@
 .logo {
   font-size: 50px;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
-
-.hero-1 {
-  background: url(../i/hero-1.1.jpg) center center no-repeat;
-  background-size: cover;
-}
-
-.hero-2 {
-  background: $color--section-2;
-
-  .fa {
-    margin: auto;
-    color: #fff;
-    font-size: 200px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .hero-2 .fa {
-    font-size: 100px;
-  }
-}
-
-
-.hero-3 {
-  position: relative;
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: $color--section-3;
-    opacity: .2;
-  }
-}
-
-
 
 #section-1 {
+
+  .col--left {
+    background: url(../i/hero-1.1.jpg) center center no-repeat;
+    background-size: cover;
+
+    @include respond-max(1000px) {
+      height: 600px;
+      background-position: top center;
+    }
+
+    @include respond-max(600px) {
+      height: 400px;
+      background-position: top center;
+    }
+  }
+
   h3, .logo {
     color: $color--section-1;
   }
@@ -58,52 +35,113 @@
 }
 
 #section-2 {
+
+  .col--left {
+    background: $color--section-2;
+    color: #fff;
+    @include display(flex);
+
+    .fa {
+      margin: auto;
+      font-size: 200px;
+
+      @include respond-max(1000px) {
+        font-size: 100px;
+      }
+    }
+  }
+
   h3, .logo {
     color: $color--section-2;
   }
 }
 
 #section-3 {
+
   h3, .logo {
     color: $color--section-3;
+  }
+
+  .col--left {
+    position: relative;
+
+    // This adds a hue to the photos.
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: $color--section-3;
+      opacity: .2;
+    }
+  }
+
+  #sarah {
+    background: url(../i/sarah.jpg) center center no-repeat;
+    background-size: cover;
+  }
+
+  #olivia {
+    background: url(../i/olivia.jpg) center center no-repeat;
+    background-size: cover;
+  }
+
+  #chanti {
+    background: url(../i/chanti.jpg) center center no-repeat;
+    background-size: cover;
   }
 }
 
 #section-4 {
+
+  .col--left {
+    background: $color--section-4;
+    color: #fff;
+    @include display(flex);
+
+    .fa {
+      margin: auto;
+      font-size: 200px;
+
+      @include respond-max(1000px) {
+        font-size: 100px;
+      }
+    }
+  }
+
   h3, .logo {
     color: $color--section-4;
   }
 }
 
-.stacked {
-  @include display(flex);
-  @include flex-direction(column);
+#section-5 {
 
-  &__item {
-    @include flex(1);
+  .col--left {
+    background: url(../i/hero-1.jpg) center center no-repeat;
+    background-size: cover;
+
+    @include respond-max(1000px) {
+      height: 600px;
+      background-position: top center;
+    }
+
+    @include respond-max(600px) {
+      height: 400px;
+      background-position: top center;
+    }
+  }
+
+  h3, .logo {
+    color: $color--section-5;
+  }
+
+  .button {
+    background: $color--section-5;
+
+    &:hover {
+      background: darken($color--section-5, 10%);
+    }
   }
 }
-
-@media (max-width: 1000px) {
-  .stacked {
-    @include flex-direction(row);
-  }
-}
-
-
-
-#sarah {
-  background: url(../i/sarah.jpg) center center no-repeat;
-  background-size: cover;
-}
-
-#olivia {
-  background: url(../i/olivia.jpg) center center no-repeat;
-  background-size: cover;
-}
-
-#chanti {
-  background: url(../i/chanti.jpg) center center no-repeat;
-  background-size: cover;
-}
-

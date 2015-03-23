@@ -279,46 +279,53 @@ input[type="submit"] {
 }
 
 /* line 1, ../scss/partials/base/_layout.scss */
-.section {
+section {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 4, ../scss/partials/base/_layout.scss */
-.section__item {
+@media only screen and (max-width: 1000px) {
+  /* line 1, ../scss/partials/base/_layout.scss */
+  section {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+/* line 8, ../scss/partials/base/_layout.scss */
+section .col {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   min-height: 800px;
 }
-/* line 8, ../scss/partials/base/_layout.scss */
-.section__item:first-child {
+/* line 12, ../scss/partials/base/_layout.scss */
+section .col--left {
   width: 45%;
 }
-/* line 11, ../scss/partials/base/_layout.scss */
-.section__item:last-child {
+/* line 15, ../scss/partials/base/_layout.scss */
+section .col--right {
   width: 55%;
   border-bottom: 1px solid #eee;
+  padding: 40px;
 }
-
-@media (max-width: 1000px) {
-  /* line 19, ../scss/partials/base/_layout.scss */
-  .section {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+@media only screen and (max-width: 1000px) {
+  /* line 15, ../scss/partials/base/_layout.scss */
+  section .col--right {
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  /* line 22, ../scss/partials/base/_layout.scss */
-  .section__item {
+}
+@media only screen and (max-width: 1000px) {
+  /* line 8, ../scss/partials/base/_layout.scss */
+  section .col {
     min-height: 200px;
-  }
-  /* line 26, ../scss/partials/base/_layout.scss */
-  .section__item:first-child, .section__item:last-child {
     width: auto;
   }
 }
+
 /* line 33, ../scss/partials/base/_layout.scss */
-.center--vertically {
+.copy-box {
   margin-top: auto;
   margin-bottom: auto;
   position: relative;
@@ -327,18 +334,37 @@ input[type="submit"] {
 
 /* line 40, ../scss/partials/base/_layout.scss */
 .content--narrow {
-  width: 50%;
+  width: 70%;
 }
-
-@media (max-width: 1000px) {
-  /* line 45, ../scss/partials/base/_layout.scss */
+@media only screen and (max-width: 1000px) {
+  /* line 40, ../scss/partials/base/_layout.scss */
   .content--narrow {
     width: auto;
   }
 }
-/* line 51, ../scss/partials/base/_layout.scss */
-.milli {
-  font-size: 14px;
+
+/* line 49, ../scss/partials/base/_layout.scss */
+.stacked {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@media only screen and (max-width: 1000px) {
+  /* line 49, ../scss/partials/base/_layout.scss */
+  .stacked {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+/* line 57, ../scss/partials/base/_layout.scss */
+.stacked__item {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 /* line 84, ../scss/partials/base/_grid.scss */
@@ -407,18 +433,23 @@ h2 {
   line-height: 1.2;
   margin: 0 0 10px;
 }
-
-@media (max-width: 1000px) {
-  /* line 8, ../scss/partials/base/_headings.scss */
+@media only screen and (max-width: 1000px) {
+  /* line 1, ../scss/partials/base/_headings.scss */
   h2 {
     font-size: 26px;
   }
 }
-/* line 14, ../scss/partials/base/_headings.scss */
+
+/* line 11, ../scss/partials/base/_headings.scss */
 h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 17px;
+}
+
+/* line 17, ../scss/partials/base/_headings.scss */
+.milli {
+  font-size: 14px;
 }
 
 /* line 1, ../scss/partials/base/_main.scss */
@@ -449,38 +480,75 @@ body {
 .logo {
   font-size: 50px;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/* line 7, ../scss/partials/objects/_sections.scss */
-.hero-1 {
+/* line 9, ../scss/partials/objects/_sections.scss */
+#section-1 .col--left {
   background: url(../i/hero-1.1.jpg) center center no-repeat;
   background-size: cover;
 }
-
-/* line 12, ../scss/partials/objects/_sections.scss */
-.hero-2 {
-  background: #238fb2;
+@media only screen and (max-width: 1000px) {
+  /* line 9, ../scss/partials/objects/_sections.scss */
+  #section-1 .col--left {
+    height: 600px;
+    background-position: top center;
+  }
 }
-/* line 15, ../scss/partials/objects/_sections.scss */
-.hero-2 .fa {
-  margin: auto;
+@media only screen and (max-width: 600px) {
+  /* line 9, ../scss/partials/objects/_sections.scss */
+  #section-1 .col--left {
+    height: 400px;
+    background-position: top center;
+  }
+}
+/* line 24, ../scss/partials/objects/_sections.scss */
+#section-1 h3, #section-1 .logo {
+  color: #df4b50;
+}
+/* line 28, ../scss/partials/objects/_sections.scss */
+#section-1 .button {
+  background: #df4b50;
+}
+/* line 31, ../scss/partials/objects/_sections.scss */
+#section-1 .button:hover {
+  background: #d2252b;
+}
+
+/* line 39, ../scss/partials/objects/_sections.scss */
+#section-2 .col--left {
+  background: #238fb2;
   color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 44, ../scss/partials/objects/_sections.scss */
+#section-2 .col--left .fa {
+  margin: auto;
   font-size: 200px;
 }
-
-@media (max-width: 1000px) {
-  /* line 23, ../scss/partials/objects/_sections.scss */
-  .hero-2 .fa {
+@media only screen and (max-width: 1000px) {
+  /* line 44, ../scss/partials/objects/_sections.scss */
+  #section-2 .col--left .fa {
     font-size: 100px;
   }
 }
-/* line 29, ../scss/partials/objects/_sections.scss */
-.hero-3 {
+/* line 54, ../scss/partials/objects/_sections.scss */
+#section-2 h3, #section-2 .logo {
+  color: #238fb2;
+}
+
+/* line 61, ../scss/partials/objects/_sections.scss */
+#section-3 h3, #section-3 .logo {
+  color: #80cabf;
+}
+/* line 65, ../scss/partials/objects/_sections.scss */
+#section-3 .col--left {
   position: relative;
 }
-/* line 32, ../scss/partials/objects/_sections.scss */
-.hero-3:after {
+/* line 69, ../scss/partials/objects/_sections.scss */
+#section-3 .col--left:after {
   content: "";
   position: absolute;
   top: 0;
@@ -490,75 +558,76 @@ body {
   background: #80cabf;
   opacity: .2;
 }
-
-/* line 47, ../scss/partials/objects/_sections.scss */
-#section-1 h3, #section-1 .logo {
-  color: #df4b50;
+/* line 81, ../scss/partials/objects/_sections.scss */
+#section-3 #sarah {
+  background: url(../i/sarah.jpg) center center no-repeat;
+  background-size: cover;
 }
-/* line 51, ../scss/partials/objects/_sections.scss */
-#section-1 .button {
-  background: #df4b50;
+/* line 86, ../scss/partials/objects/_sections.scss */
+#section-3 #olivia {
+  background: url(../i/olivia.jpg) center center no-repeat;
+  background-size: cover;
 }
-/* line 54, ../scss/partials/objects/_sections.scss */
-#section-1 .button:hover {
-  background: #d2252b;
-}
-
-/* line 61, ../scss/partials/objects/_sections.scss */
-#section-2 h3, #section-2 .logo {
-  color: #238fb2;
+/* line 91, ../scss/partials/objects/_sections.scss */
+#section-3 #chanti {
+  background: url(../i/chanti.jpg) center center no-repeat;
+  background-size: cover;
 }
 
-/* line 67, ../scss/partials/objects/_sections.scss */
-#section-3 h3, #section-3 .logo {
-  color: #80cabf;
+/* line 99, ../scss/partials/objects/_sections.scss */
+#section-4 .col--left {
+  background: #f36b21;
+  color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
-
-/* line 73, ../scss/partials/objects/_sections.scss */
+/* line 104, ../scss/partials/objects/_sections.scss */
+#section-4 .col--left .fa {
+  margin: auto;
+  font-size: 200px;
+}
+@media only screen and (max-width: 1000px) {
+  /* line 104, ../scss/partials/objects/_sections.scss */
+  #section-4 .col--left .fa {
+    font-size: 100px;
+  }
+}
+/* line 114, ../scss/partials/objects/_sections.scss */
 #section-4 h3, #section-4 .logo {
   color: #f36b21;
 }
 
-/* line 78, ../scss/partials/objects/_sections.scss */
-.stacked {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+/* line 121, ../scss/partials/objects/_sections.scss */
+#section-5 .col--left {
+  background: url(../i/hero-1.jpg) center center no-repeat;
+  background-size: cover;
 }
-/* line 82, ../scss/partials/objects/_sections.scss */
-.stacked__item {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-@media (max-width: 1000px) {
-  /* line 88, ../scss/partials/objects/_sections.scss */
-  .stacked {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
+@media only screen and (max-width: 1000px) {
+  /* line 121, ../scss/partials/objects/_sections.scss */
+  #section-5 .col--left {
+    height: 600px;
+    background-position: top center;
   }
 }
-/* line 95, ../scss/partials/objects/_sections.scss */
-#sarah {
-  background: url(../i/sarah.jpg) center center no-repeat;
-  background-size: cover;
+@media only screen and (max-width: 600px) {
+  /* line 121, ../scss/partials/objects/_sections.scss */
+  #section-5 .col--left {
+    height: 400px;
+    background-position: top center;
+  }
 }
-
-/* line 100, ../scss/partials/objects/_sections.scss */
-#olivia {
-  background: url(../i/olivia.jpg) center center no-repeat;
-  background-size: cover;
+/* line 136, ../scss/partials/objects/_sections.scss */
+#section-5 h3, #section-5 .logo {
+  color: #df4b50;
 }
-
-/* line 105, ../scss/partials/objects/_sections.scss */
-#chanti {
-  background: url(../i/chanti.jpg) center center no-repeat;
-  background-size: cover;
+/* line 140, ../scss/partials/objects/_sections.scss */
+#section-5 .button {
+  background: #df4b50;
+}
+/* line 143, ../scss/partials/objects/_sections.scss */
+#section-5 .button:hover {
+  background: #d2252b;
 }
 
 /* line 10, ../scss/partials/trumps/_layout.scss */
