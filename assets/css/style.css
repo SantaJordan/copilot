@@ -559,18 +559,18 @@ body {
   opacity: .2;
 }
 /* line 81, ../scss/partials/objects/_sections.scss */
-#section-3 #sarah {
-  background: url(../i/sarah.jpg) center center no-repeat;
+#section-3 #brad {
+  background: url(../i/brad.jpg) center center no-repeat;
   background-size: cover;
 }
 /* line 86, ../scss/partials/objects/_sections.scss */
-#section-3 #olivia {
-  background: url(../i/olivia.jpg) center center no-repeat;
+#section-3 #jenny {
+  background: url(../i/jenny.jpg) center center no-repeat;
   background-size: cover;
 }
 /* line 91, ../scss/partials/objects/_sections.scss */
-#section-3 #chanti {
-  background: url(../i/chanti.jpg) center center no-repeat;
+#section-3 #sarah {
+  background: url(../i/sarah.jpg) center center no-repeat;
   background-size: cover;
 }
 
