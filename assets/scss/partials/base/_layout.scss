@@ -1,7 +1,60 @@
-.fence {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+section {
+  @include display(flex);
+
+  @include respond-max(1000px) {
+    @include flex-direction(column);
+  }
+
+  .col {
+    @include display(flex);
+    min-height: 800px;
+
+    &--left {
+      width: 45%;
+    }
+    &--right {
+      width: 55%;
+      border-bottom: 1px solid #eee;
+      padding: 40px;
+
+      @include respond-max(1000px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    @include respond-max(1000px) {
+      min-height: 200px;
+      width: auto;
+    }
+  }
+}
+
+.copy-box {
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  top: -10%;
+}
+
+.content--narrow {
+  width: 70%;
+
+  @include respond-max(1000px) {
+    width: auto;
+  }
+}
+
+
+.stacked {
+  @include display(flex);
+  @include flex-direction(column);
+
+  @include respond-max(1000px) {
+    @include flex-direction(row);
+  }
+
+  &__item {
+    @include flex(1);
+  }
 }

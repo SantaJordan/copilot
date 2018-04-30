@@ -83,12 +83,12 @@
 
 %grid,
 .grid {
-  @include flex;
-  @include flex-wrap--wrap;
+  @include display(flex);
+  @include flex-wrap(wrap);
   margin-left: -(spacer(2));
 
   &__cell {
-    @include flex-1;
+    @include flex(1);
     padding-left: spacer(2);
   }
 
@@ -120,11 +120,11 @@
   // Moves grid cells to align center or anchored at the bottom of the grid.
 
   &--center {
-    @include align-items--center;
+    @include align-items(center);
   }
 
   &--bottom {
-    @include align-items--flex-end;
+    @include align-items(flex-end);
   }
 
   // ## Grid Widths
