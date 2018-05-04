@@ -121,7 +121,8 @@ textarea:focus {
 // ## Links
 
 a {
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
 }
 
 // Improve readability when focused and also mouse hovered in all browsers.
